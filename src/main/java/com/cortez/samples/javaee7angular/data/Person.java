@@ -8,10 +8,14 @@ import javax.persistence.*;
  * @author Roberto Cortez
  */
 @Entity
+@Table(name="person", schema = "eclair")
 public class Person {
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id")
+    //@SequenceGenerator(name = "id", sequenceName = "id")
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id")
-    @SequenceGenerator(name = "id", sequenceName = "id")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
     private String name;
